@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Student Profile - Campus Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <div class="container mt-4 flex-grow-1">
+        <div class="row">
+            <!-- Profile Card -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/150" alt="Student Photo"
+                            class="rounded-circle img-fluid mb-3" style="width: 150px;">
+                        <h5 class="my-3" id="studentName">John Doe</h5>
+                        <p class="text-muted mb-1" id="studentId">Student ID: 123456</p>
+                        <p class="text-muted mb-4" id="studentDepartment">Computer Engineering</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Joined Clubs Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Joined Clubs</h6>
+                        <ul class="list-group list-group-flush" id="clubsList">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Programming Club
+                                <span class="badge bg-primary rounded-pill">Member</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Chess Club
+                                <span class="badge bg-success rounded-pill">Leader</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details Card -->
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Personal Information</h6>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0" id="fullName">John William Doe</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0" id="email">john.doe@example.com</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0" id="phone">(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Year</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0" id="year">3rd Year</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0" id="address">123 Campus Street, University City</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Recent Activities</h6>
+                        <div class="timeline">
+                            <div class="timeline-item mb-3">
+                                <p class="mb-1"><strong>Joined Programming Contest</strong></p>
+                                <p class="text-muted mb-0 small">3 days ago</p>
+                            </div>
+                            <div class="timeline-item mb-3">
+                                <p class="mb-1"><strong>Attended Chess Club Meeting</strong></p>
+                                <p class="text-muted mb-0 small">1 week ago</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="mb-1"><strong>Registered for Spring Hackathon</strong></p>
+                                <p class="text-muted mb-0 small">2 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-light">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Campus Connect 2024</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/role-manager.js"></script>
+    <script src="js/include-navbar.js"></script>
+</body>
+
+</html>

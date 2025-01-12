@@ -8,98 +8,202 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Student Dashboard - Campus Connect</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <!-- Main Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <!-- Brand -->
-            <a class="navbar-brand d-lg-none" href="student-dashboard.html">Campus Connect</a>
-
-            <!-- Toggle Button for Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Main Navigation Items - Centered -->
-            <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
-                <ul class="navbar-nav">
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" href="student-dashboard.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="student-events.html">
-                            <i class="fas fa-calendar"></i> Events
-                        </a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="student-clubs.html">
-                            <i class="fas fa-users"></i> Student Clubs
-                        </a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="student-settings.html">
-                            <i class="fas fa-gear"></i> Settings
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- User Profile Dropdown - Fixed Position -->
-            <div class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user fa-fw"></i>
-                        <span id="userRole">Student</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Profile</a></li>
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </div>
-        </div>
-    </nav>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Main Content -->
-    <div class="container-fluid mt-4">
-        <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Student Dashboard</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-                <!-- Role-specific content will be loaded here -->
-                <div id="roleSpecificContent"></div>
-            </div>
-        </main>
+    <div class="container mt-4 flex-grow-1" style="max-width: 1200px;">
+        <h1 class="mb-4">Welcome, <span id="studentName">Student</span>!</h1>
 
-        <!-- Footer -->
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Campus Connect 2024</div>
+        <!-- Quick Stats Row -->
+        <div class="row mb-4" id="quickStats">
+            <!-- Cards will be populated here -->
+        </div>
+
+        <!-- Upcoming Events and Announcements Row -->
+        <div class="row mb-4">
+            <!-- Upcoming Events -->
+            <div class="col-lg-6" id="upcomingEvents">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-calendar me-1"></i>
+                        Upcoming Events
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group" id="eventList">
+                            <!-- Events will be populated here -->
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+
+            <!-- Latest Announcements -->
+            <div class="col-lg-6" id="latestAnnouncements">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-bullhorn me-1"></i>
+                        Latest Announcements
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group" id="announcementList">
+                            <!-- Announcements will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Clubs Row -->
+        <div class="row">
+            <div class="col-12" id="myClubs">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-users me-1"></i>
+                        My Clubs
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="clubList">
+                            <!-- Clubs will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/role-manager.js"></script>
+    <!-- Footer -->
+    <footer class="py-4 bg-light">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Campus Connect 2024</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/include-navbar.js"></script>
+    <script>
+        // Fetch student data from the backend
+        async function fetchStudentData() {
+            const studentId = 1; // Replace with actual student ID
+            try {
+                const response = await fetch(`/api/students/${studentId}`);
+                const data = await response.json();
+
+                // Populate student name
+                document.getElementById('studentName').innerText = data.name;
+
+                // Populate quick stats
+                document.getElementById('quickStats').innerHTML = `
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-primary text-white mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">My Clubs</h5>
+                                <h2 class="mb-0">${data.clubs.length}</h2>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="student-clubs.html">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-success text-white mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Upcoming Events</h5>
+                                <h2 class="mb-0">${data.upcomingEvents.length}</h2>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="student-events.html">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">New Announcements</h5>
+                                <h2 class="mb-0">${data.announcements.length}</h2>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="student-announcements.html">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-info text-white mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Active Applications</h5>
+                                <h2 class="mb-0">${data.activeApplications.length}</h2>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Populate upcoming events
+                const eventList = document.getElementById('eventList');
+                data.upcomingEvents.forEach(event => {
+                    eventList.innerHTML += `
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">${event.title}</h5>
+                                <small class="text-muted">${event.date}</small>
+                            </div>
+                            <p class="mb-1">${event.description}</p>
+                            <small class="text-muted">Location: ${event.location}</small>
+                        </a>
+                    `;
+                });
+
+                // Populate latest announcements
+                const announcementList = document.getElementById('announcementList');
+                data.announcements.forEach(announcement => {
+                    announcementList.innerHTML += `
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">${announcement.title}</h5>
+                                <small class="text-muted">${announcement.date}</small>
+                            </div>
+                            <p class="mb-1">${announcement.description}</p>
+                        </a>
+                    `;
+                });
+
+                // Populate my clubs
+                const clubList = document.getElementById('clubList');
+                data.clubs.forEach(club => {
+                    clubList.innerHTML += `
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">${club.name}</h5>
+                                    <p class="card-text">Member since ${club.joinedDate}</p>
+                                    <span class="badge bg-primary">Active Member</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+            } catch (error) {
+                console.error('Error fetching student data:', error);
+            }
+        }
+
+        // Call the function to fetch data when the page loads
+        document.addEventListener('DOMContentLoaded', fetchStudentData);
+    </script>
 </body>
 
 </html>

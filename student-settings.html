@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Settings - Campus Connect</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <div class="container mt-4 flex-grow-1">
+        <h1 class="mb-4">Settings</h1>
+
+        <div class="row">
+            <!-- Settings Navigation -->
+            <div class="col-md-3 mb-4">
+                <div class="list-group">
+                    <a href="#notifications" class="list-group-item list-group-item-action active"
+                        data-bs-toggle="list">
+                        <i class="fas fa-bell me-2"></i>Notifications
+                    </a>
+                    <a href="#privacy" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                        <i class="fas fa-shield-alt me-2"></i>Privacy
+                    </a>
+                    <a href="#appearance" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                        <i class="fas fa-paint-brush me-2"></i>Appearance
+                    </a>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <!-- Notifications Settings -->
+                    <div class="tab-pane fade show active" id="notifications">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Notification Preferences</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="notificationSettingsForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Notifications</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Event Reminders</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Club Updates</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Announcements</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Push Notifications</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Enable Push Notifications</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div class="tab-pane fade" id="privacy">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Privacy Settings</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="privacySettingsForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">Profile Visibility</label>
+                                        <select class="form-select">
+                                            <option>Public</option>
+                                            <option selected>Club Members Only</option>
+                                            <option>Private</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Activity Status</label>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Show when I'm active</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Club Membership Visibility</label>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Show my club memberships</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Privacy Settings</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Settings -->
+                    <div class="tab-pane fade" id="appearance">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Appearance Settings</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="appearanceSettingsForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">Theme</label>
+                                        <select class="form-select">
+                                            <option selected>Light</option>
+                                            <option>Dark</option>
+                                            <option>System Default</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Font Size</label>
+                                        <select class="form-select">
+                                            <option>Small</option>
+                                            <option selected>Medium</option>
+                                            <option>Large</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Appearance</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-light">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Campus Connect 2024</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/include-navbar.js"></script>
+    <script>
+        // Handle form submissions
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                // Add your form submission logic here
+                alert('Settings saved successfully!');
+            });
+        });
+    </script>
+</body>
+
+</html>
